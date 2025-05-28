@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CartonReborn: Art, Earth & Utility - Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- 
+        Chosen Color Palette: "Vibrant Growth" (Conceptual Name)
+        Primary: #4CAF50 (Green)
+        Secondary: #FFC107 (Amber)
+        Accent: #2196F3 (Blue)
+        Neutral Dark: #424242 (Dark Gray)
+        Neutral Light: #F5F5F5 (Light Gray)
+        Text: #333333 (Dark Gray for Text)
+        Background: #FFFFFF (White)
+
+        Infographic Narrative Plan:
+        1.  Hero: Title, Tagline - Big impact text.
+        2.  The Challenge & Our Solution: Briefly state the problem and CartonReborn's mission.
+        3.  Our Products: Showcase each product using cards with details (name, use, audience, price). Use Unicode icons.
+        4.  Impact Dashboard: 
+            - Environmental Impact: List with icons. Chart.js Donut chart for 'Waste Diverted' (conceptual).
+            - Social Impact: List with icons.
+        5.  Target Audience: Display segments using styled cards or a simple bar chart showing reach/focus.
+        6.  Financial Snapshot: 
+            - Key figures (Setup, Revenue, Break-even) as "Big Numbers".
+            - Chart.js Bar chart comparing Avg. Setup Cost vs. Avg. Monthly Revenue Potential.
+        7.  Vision & Growth: Key future goals as a list.
+        8.  Collaboration Network: Illustrate potential partners using a structured HTML/CSS layout.
+        9.  Call to Action: "Join Us".
+
+        Visualization Choices & Justification (Confirming NO SVG, NO MERMAID JS):
+        -   Hero Text: Goal: Inform. Method: Large HTML text. No SVG.
+        -   Product Showcase: Goal: Inform. Method: HTML Cards with Tailwind, Unicode characters for icons (🧠🎨🐝💡🌸). No SVG.
+        -   Environmental Impact (Waste Diverted - Conceptual): Goal: Inform. Method: Chart.js Donut Chart. Data: Conceptual percentage (e.g., 75% of collected cartons upcycled). No SVG.
+        -   Social Impact (Key Areas): Goal: Inform. Method: HTML list with Unicode icons. No SVG.
+        -   Target Audience Segments: Goal: Compare. Method: Chart.js Horizontal Bar Chart (showing illustrative focus/reach for each segment). Labels will be wrapped. No SVG.
+        -   Financial Snapshot (Key Figures): Goal: Inform. Method: Large HTML text ("Big Numbers"). No SVG.
+        -   Financial Comparison (Setup vs. Revenue): Goal: Compare. Method: Chart.js Bar Chart. Labels will be wrapped. No SVG.
+        -   Vision & Growth (Future Goals): Goal: Organize. Method: HTML list. No SVG.
+        -   Collaboration Network: Goal: Organize/Show Relationships. Method: Structured HTML/CSS with Tailwind to represent nodes/connections. No SVG, No Mermaid JS.
+        -   All Chart.js instances will use Canvas rendering, include label wrapping for labels > 16 chars, and have the required tooltip configuration.
+
+        Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in this output.
+    -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: #333333; }
+        .chart-container { position: relative; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; height: 300px; max-height: 400px; }
+        @media (min-width: 768px) { .chart-container { height: 350px; } }
+        .section-title { color: #4CAF50; } /* Green */
+        .card { background-color: #F5F5F5; border-left: 5px solid #FFC107; /* Amber */ }
+        .stat-value { color: #2196F3; /* Blue */ }
+        .icon-placeholder { font-size: 2rem; color: #4CAF50; }
+        .flowchart-node { background-color: #F5F5F5; border: 2px solid #2196F3; }
+        .flowchart-arrow { border-color: #4CAF50; }
+    </style>
+</head>
+<body class="bg-white">
+
+    <header class="bg-[#4CAF50] text-white py-12 px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">CartonReborn: Art, Earth & Utility 🐣</h1>
+        <p class="text-xl md:text-2xl">Turning Trash into Treasure – One Egg Carton at a Time</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="challenge-solution" class="my-12 text-center">
+            <h2 class="text-3xl font-bold mb-6 section-title">The Challenge & Our Solution</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white p-6 rounded-lg shadow-xl card">
+                    <h3 class="text-2xl font-semibold mb-3 text-[#424242]">The Mounting Problem of Waste</h3>
+                    <p class="text-lg">Discarded egg cartons significantly contribute to landfill waste, posing an environmental challenge. This represents untapped potential, as these materials can be transformed rather than discarded.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-xl card">
+                    <h3 class="text-2xl font-semibold mb-3 text-[#424242]">CartonReborn's Innovative Approach</h3>
+                    <p class="text-lg">CartonReborn is a social enterprise dedicated to upcycling these discarded egg cartons. We transform them into a diverse range of high-value, beautiful, and sustainable products, blending eco-conscious design with community empowerment and creativity.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-12 border-gray-300">
+
+        <section id="products" class="my-12">
+            <h2 class="text-3xl font-bold mb-8 text-center section-title">Our Products: From Cartons to Creations</h2>
+            <p class="text-center text-lg mb-10 text-[#424242]">We meticulously craft discarded egg cartons into unique items that serve both aesthetic and functional purposes. Each product embodies our commitment to sustainability and innovation.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white p-6 rounded-lg shadow-xl card hover:shadow-2xl transition-shadow duration-300">
+                    <div class="text-4xl mb-4 text-center icon-placeholder">🧠</div>
+                    <h3 class="text-xl font-semibold mb-2 text-[#424242]">Acoustic Panels</h3>
+                    <p class="text-sm text-gray-600 mb-1">Stylish, DIY soundproofing from molded cartons.</p>
+                    <p class="text-sm text-gray-600 mb-1"><strong class="text-[#424242]">Use:</strong> Home studios, study spaces, offices.</p>
+                    <p class="text-sm text-gray-600 mb-1"><strong class="text-[#424242]">Audience:</strong> Students, podcasters, freelancers.</p>
+                    <p class="text-md font-semibold stat-value">Price: ₹300 – ₹800/panel</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-xl card hover:shadow-2xl transition-shadow duration-300">
+                    <div class="text-4xl mb-4 text-center icon-placeholder">🎨</div>
+                    <h3 class="text-xl font-semibold mb-2 text-[#424242]">Eco Art Canvases</h3>
+                    <p class="text-sm text-gray-600 mb-1">3D mosaic-style art using egg cups on cardboard.</p>
+                    <p class="text-sm text-gray-600 mb-1"><strong class="text-[#424242]">Use:</strong> Schools, therapy, DIY workshops.</p>
+                    <p class="text-sm text-gray-600 mb-1"><strong class="text-[#424242]">Audience:</strong> NGOs, parents, schools, art therapists.</p>
+                    <p class="text-md font-semibold stat-value">Price: ₹100 – ₹500/kit</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-xl card hover:shadow-2xl transition-shadow duration-300">
+                    <div class="text-4xl mb-4 text-center icon-placeholder">🐝</div>
+                    <h3 class="text-xl font-semibold mb-2 text-[#424242]">Wildlife Feeders / Insect Hotels</h3>
+                    <p class="text-sm text-gray-600 mb-1">Cartons transformed into nests for pollinators.</p>
+                    <p class="text-sm text-gray-600 mb-1"><strong class="text-[#424242]">Use:</strong> Promotes garden biodiversity.</p>
+                    <p class="text-sm text-gray-600 mb-1"><strong class="text-[#424242]">Audience:</strong> Gardeners, schools, nature NGOs.</p>
+                    <p class="text-md font-semibold stat-value">Price: ₹150 – ₹400/unit</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-xl card hover:shadow-2xl transition-shadow duration-300">
+                     <div class="text-4xl mb-4 text-center icon-placeholder">💡</div>
+                    <h3 class="text-xl font-semibold mb-2 text-[#424242]">Decorative Mood Lamps</h3>
+                    <p class="text-sm text-gray-600 mb-1">Handcrafted lampshades from egg cups.</p>
+                    <p class="text-sm text-gray-600 mb-1"><strong class="text-[#424242]">Use:</strong> Ambient lighting for cafes, homes.</p>
+                    <p class="text-sm text-gray-600 mb-1"><strong class="text-[#424242]">Audience:</strong> Decorators, cafes, eco-shoppers.</p>
+                    <p class="text-md font-semibold stat-value">Price: ₹500 – ₹1,500/design</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-xl card hover:shadow-2xl transition-shadow duration-300">
+                    <div class="text-4xl mb-4 text-center icon-placeholder">🌸</div>
+                    <h3 class="text-xl font-semibold mb-2 text-[#424242]">Natural Air Freshener Pods</h3>
+                    <p class="text-sm text-gray-600 mb-1">Biodegradable pods with natural scents.</p>
+                    <p class="text-sm text-gray-600 mb-1"><strong class="text-[#424242]">Use:</strong> Homes, cars, cupboards.</p>
+                    <p class="text-sm text-gray-600 mb-1"><strong class="text-[#424242]">Audience:</strong> Homemakers, eco-consumers.</p>
+                    <p class="text-md font-semibold stat-value">Price: ₹150 – ₹300/set</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-12 border-gray-300">
+
+        <section id="impact" class="my-12">
+            <h2 class="text-3xl font-bold mb-8 text-center section-title">Our Impact: Nurturing Planet & People</h2>
+            <p class="text-center text-lg mb-10 text-[#424242]">CartonReborn is committed to making a tangible difference, both environmentally and socially. Our model focuses on sustainability, empowerment, and fostering community well-being.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-xl card">
+                    <h3 class="text-2xl font-semibold mb-4 text-center text-[#424242]">🌍 Environmental Stewardship</h3>
+                    <p class="text-center text-gray-700 mb-4">We actively reduce waste and promote ecological health through:</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="icon-placeholder mr-2">♻️</span> Diverting significant carton waste from landfills.</li>
+                        <li class="flex items-center"><span class="icon-placeholder mr-2">🔄</span> Championing a circular economy by giving materials a new life.</li>
+                        <li class="flex items-center"><span class="icon-placeholder mr-2">🌳</span> Encouraging biodiversity with wildlife-friendly products.</li>
+                        <li class="flex items-center"><span class="icon-placeholder mr-2">🌿</span> Promoting sustainable, low-waste lifestyle choices.</li>
+                    </ul>
+                    <div class="chart-container mt-6 h-64 md:h-80">
+                        <canvas id="wasteDivertedChart"></canvas>
+                    </div>
+                    <p class="text-sm text-center mt-2 text-gray-600">Illustrative: Percentage of collected cartons successfully upcycled (e.g., aiming for 90%+).</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-xl card">
+                    <h3 class="text-2xl font-semibold mb-4 text-center text-[#424242]">🤝 Social Empowerment</h3>
+                     <p class="text-center text-gray-700 mb-4">We empower individuals and communities by:</p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="icon-placeholder mr-2">👩‍🎓</span> Providing skill training & employment, especially for underprivileged women and youth.</li>
+                        <li class="flex items-center"><span class="icon-placeholder mr-2">😊</span> Fostering creativity, artistic expression, and therapeutic benefits.</li>
+                        <li class="flex items-center"><span class="icon-placeholder mr-2">💡</span> Empowering individuals to become micro-entrepreneurs.</li>
+                        <li class="flex items-center"><span class="icon-placeholder mr-2">🏘️</span> Building stronger, more resilient communities through shared purpose.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-12 border-gray-300">
+
+        <section id="target-audience" class="my-12">
+            <h2 class="text-3xl font-bold mb-8 text-center section-title">Connecting With Our Audience</h2>
+            <p class="text-center text-lg mb-10 text-[#424242]">Our products and mission resonate with a diverse group of individuals and organizations who value sustainability, creativity, and community impact. We aim to reach various segments with tailored offerings.</p>
+            <div class="chart-container h-[450px] sm:h-[500px] md:h-[550px]">
+                <canvas id="targetAudienceChart"></canvas>
+            </div>
+            <p class="text-sm text-center mt-2 text-gray-600">Illustrative representation of focus and reach across key target segments.</p>
+        </section>
+
+        <hr class="my-12 border-gray-300">
+
+        <section id="financials" class="my-12">
+            <h2 class="text-3xl font-bold mb-8 text-center section-title">Financial Snapshot & Projections</h2>
+            <p class="text-center text-lg mb-10 text-[#424242]">CartonReborn is built on a lean operational model with strong potential for growth and profitability, ensuring long-term sustainability and impact.</p>
+            <div class="grid md:grid-cols-3 gap-8 text-center mb-10">
+                <div class="bg-white p-6 rounded-lg shadow-xl card">
+                    <h3 class="text-xl font-semibold text-[#424242] mb-2">Initial Setup Cost</h3>
+                    <p class="text-3xl font-bold stat-value">₹10k – ₹25k</p>
+                    <p class="text-sm text-gray-600">(Tools, materials, initial training)</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-xl card">
+                    <h3 class="text-xl font-semibold text-[#424242] mb-2">Potential Monthly Revenue</h3>
+                    <p class="text-3xl font-bold stat-value">₹15k – ₹30k</p>
+                    <p class="text-sm text-gray-600">(Based on product mix & sales)</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-xl card">
+                    <h3 class="text-xl font-semibold text-[#424242] mb-2">Break-even Point</h3>
+                    <p class="text-3xl font-bold stat-value">3 – 5 Months</p>
+                    <p class="text-sm text-gray-600">(Projected timeline)</p>
+                </div>
+            </div>
+            <p class="text-center text-lg mb-6 text-[#424242]">Comparing our lean setup costs with robust revenue potential highlights the financial viability of our social enterprise.</p>
+            <div class="chart-container">
+                <canvas id="financialProjectionChart"></canvas>
+            </div>
+             <p class="text-sm text-center mt-2 text-gray-600">Comparison of average initial setup cost against average potential monthly revenue.</p>
+        </section>
+
+        <hr class="my-12 border-gray-300">
+
+        <section id="vision-growth" class="my-12">
+            <h2 class="text-3xl font-bold mb-8 text-center section-title">Our Vision & Growth Path</h2>
+             <p class="text-center text-lg mb-6 text-[#424242]"><strong class="text-[#424242]">Our Vision:</strong> To be India’s go-to brand for artistic, sustainable, and impactful upcycled solutions.</p>
+            <p class="text-center text-lg mb-10 text-[#424242]">We have ambitious goals to expand our reach, deepen our impact, and continue innovating in the upcycled products space.</p>
+            <div class="bg-white p-8 rounded-lg shadow-xl card">
+                <h3 class="text-2xl font-semibold mb-6 text-center text-[#424242]">Key Future Goals</h3>
+                <ul class="space-y-4 text-lg text-gray-700">
+                    <li class="flex items-start"><span class="icon-placeholder mr-3">🤝</span> <strong>Expand Partnerships:</strong> Collaborate extensively with schools, cafes, and corporate entities for sourcing, sales, and workshops.</li>
+                    <li class="flex items-start"><span class="icon-placeholder mr-3">🎁</span> <strong>Product Diversification:</strong> Launch DIY kits for various products and develop curated gifting options for conscious consumers.</li>
+                    <li class="flex items-start"><span class="icon-placeholder mr-3">📈</span> <strong>Scale Social Impact:</strong> Train and employ over 100 artisans, focusing on marginalized communities, within the next 3 years.</li>
+                    <li class="flex items-start"><span class="icon-placeholder mr-3">🌍</span> <strong>Market Expansion:</strong> Explore opportunities to export unique eco-decor products to international markets.</li>
+                    <li class="flex items-start"><span class="icon-placeholder mr-3">🏘️</span> <strong>Community Hubs:</strong> Establish small-scale, decentralized production and learning hubs to foster local entrepreneurship.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <hr class="my-12 border-gray-300">
+
+        <section id="collaborations" class="my-12">
+            <h2 class="text-3xl font-bold mb-8 text-center section-title">Building a Network for Change</h2>
+            <p class="text-center text-lg mb-10 text-[#424242]">Collaboration is key to our success. We aim to build strong partnerships across various sectors to amplify our impact and create a robust ecosystem for sustainable upcycling.</p>
+            <div class="space-y-8">
+                <div class="text-center p-4 flowchart-node rounded-lg shadow-md">
+                    <p class="text-xl font-semibold text-[#424242]">CartonReborn Core</p>
+                    <p class="text-sm text-gray-600">(Design, Training, Coordination)</p>
+                </div>
+                <div class="flex justify-center my-4">
+                    <div class="w-0.5 h-12 bg-[#4CAF50] flowchart-arrow"></div>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+                    <div class="p-4 flowchart-node rounded-lg shadow-md">
+                        <h4 class="font-semibold text-[#424242]">Sourcing Partners</h4>
+                        <p class="text-sm text-gray-600">Egg Sellers, Kiranas, Communities, Waste Mgmt Orgs</p>
+                    </div>
+                     <div class="p-4 flowchart-node rounded-lg shadow-md">
+                        <h4 class="font-semibold text-[#424242]">Implementation & Outreach</h4>
+                        <p class="text-sm text-gray-600">NGOs, Eco-Brands (Okhai, Amala Earth), Retail Platforms</p>
+                    </div>
+                     <div class="p-4 flowchart-node rounded-lg shadow-md">
+                        <h4 class="font-semibold text-[#424242]">Support & Mentorship</h4>
+                        <p class="text-sm text-gray-600">Govt Programs (Skill India, Startup India), Schools, Art Centres</p>
+                    </div>
+                    <div class="p-4 flowchart-node rounded-lg shadow-md md:col-span-2 lg:col-span-3 lg:max-w-md lg:mx-auto">
+                        <h4 class="font-semibold text-[#424242]">Corporate & B2B</h4>
+                        <p class="text-sm text-gray-600">Sustainable Gifting, Eco-Decor for Businesses, Event Companies</p>
+                    </div>
+                </div>
+                 <div class="flex justify-center my-4">
+                    <div class="w-0.5 h-12 bg-[#4CAF50] flowchart-arrow"></div>
+                </div>
+                <div class="text-center p-4 flowchart-node rounded-lg shadow-md">
+                    <p class="text-xl font-semibold text-[#424242]">Empowered Artisans & Sustainable Products</p>
+                </div>
+            </div>
+            <p class="text-center text-md mt-8 text-gray-700">This network fosters a continuous flow of resources, skills, and opportunities, driving our mission forward.</p>
+        </section>
+
+        <hr class="my-12 border-gray-300">
+
+        <section id="cta" class="my-12 py-12 bg-[#4CAF50] text-white text-center rounded-lg shadow-xl">
+            <h2 class="text-3xl font-bold mb-6">Join Us in Reimagining Waste!</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">CartonReborn is more than a business; it's a movement towards a sustainable, creative, and empowered future. Partner with us to invest, collaborate, and support our mission.</p>
+            <p class="text-2xl font-semibold">Let's build a greener India, one egg carton at a time.</p>
+            <p class="mt-6 text-lg">Contact: [Your Contact Information Here - e.g., info@cartonreborn.example.com]</p>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-6 bg-gray-100 text-gray-600 text-sm">
+        <p>&copy; <span id="currentYear"></span> CartonReborn. All Rights Reserved.</p>
+        <p>Infographic designed to inspire action towards sustainability.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        function wrapLabel(str, maxWidth) {
+            if (!str || typeof str !== 'string') return '';
+            if (str.length <= maxWidth) return str;
+            
+            const words = str.split(' ');
+            let currentLine = '';
+            const lines = [];
+            for (let word of words) {
+                if ((currentLine + word).length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = word + ' ';
+                } else {
+                    currentLine += word + ' ';
+                }
+            }
+            if (currentLine.length > 0) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        }
+
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            if (!item || !item.chart || !item.chart.data || !item.chart.data.labels) return '';
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+        
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: { color: '#333333' }
+                },
+                tooltip: {
+                    callbacks: { title: tooltipTitleCallback },
+                    backgroundColor: 'rgba(0,0,0,0.7)',
+                    titleColor: '#FFFFFF',
+                    bodyColor: '#FFFFFF',
+                }
+            },
+            scales: {
+                y: {
+                    ticks: { color: '#333333', callback: function(value) { return '₹' + value; } }, // Add Rupee symbol if financial
+                    grid: { color: 'rgba(0,0,0,0.05)' }
+                },
+                x: {
+                    ticks: { color: '#333333' },
+                    grid: { display: false }
+                }
+            }
+        };
+        
+        const commonPieDonutOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'top', labels: { color: '#333333' } },
+                tooltip: {
+                    callbacks: { title: tooltipTitleCallback },
+                    backgroundColor: 'rgba(0,0,0,0.7)',
+                    titleColor: '#FFFFFF',
+                    bodyColor: '#FFFFFF',
+                }
+            }
+        };
+
+        // Waste Diverted Chart (Donut)
+        const wasteDivertedCtx = document.getElementById('wasteDivertedChart')?.getContext('2d');
+        if (wasteDivertedCtx) {
+            new Chart(wasteDivertedCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Cartons Upcycled', 'Non-Upcyclable Residue (Minimized)'],
+                    datasets: [{
+                        label: 'Waste Management',
+                        data: [90, 10], // Conceptual data
+                        backgroundColor: ['#4CAF50', '#FFC107'],
+                        borderColor: ['#FFFFFF', '#FFFFFF'],
+                        borderWidth: 2
+                    }]
+                },
+                options: commonPieDonutOptions
+            });
+        }
+
+        // Target Audience Chart (Horizontal Bar)
+        const targetAudienceCtx = document.getElementById('targetAudienceChart')?.getContext('2d');
+        if (targetAudienceCtx) {
+            new Chart(targetAudienceCtx, {
+                type: 'bar', // Horizontal bar
+                data: {
+                    labels: [
+                        wrapLabel('Eco-conscious Millennials & Gen Z', 16),
+                        wrapLabel('Urban Homemakers & Decor Lovers', 16),
+                        wrapLabel('Budget Content Creators & Podcasters', 16),
+                        wrapLabel('Schools, NGOs, and Parents', 16),
+                        wrapLabel('Event Planners, Cafés, Eco-Markets', 16)
+                    ],
+                    datasets: [{
+                        label: 'Illustrative Focus/Reach',
+                        data: [85, 75, 60, 90, 70], // Conceptual data representing focus/reach
+                        backgroundColor: ['#4CAF50', '#FFC107', '#2196F3', '#F44336', '#9C27B0'],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 1
+                    }]
+                },
+                options: { ...commonChartOptions, 
+                    indexAxis: 'y', // This makes it a horizontal bar chart
+                    scales: { 
+                        x: { ...commonChartOptions.scales.x, ticks: { callback: function(value) { return value + '%'; } } }, // Percentage for x-axis
+                        y: { ...commonChartOptions.scales.y, ticks: { callback: function(value, index, values) { // Custom callback for potentially multi-line labels
+                                let label = this.getLabelForValue(value);
+                                return Array.isArray(label) ? label : [label];
+                            },
+                            color: '#333333' 
+                          }
+                        }
+                    } 
+                }
+            });
+        }
+
+        // Financial Projection Chart (Bar)
+        const financialCtx = document.getElementById('financialProjectionChart')?.getContext('2d');
+        if (financialCtx) {
+            new Chart(financialCtx, {
+                type: 'bar',
+                data: {
+                    labels: [wrapLabel('Avg. Initial Setup Cost', 16), wrapLabel('Avg. Potential Monthly Revenue', 16)],
+                    datasets: [{
+                        label: 'Financial Figures (₹)',
+                        data: [17500, 22500], // Avg of ranges: (10k+25k)/2=17.5k, (15k+30k)/2=22.5k
+                        backgroundColor: ['#FFC107', '#4CAF50'],
+                        borderColor: ['#FFFFFF', '#FFFFFF'],
+                        borderWidth: 1
+                    }]
+                },
+                options: { ...commonChartOptions, 
+                    scales: {
+                         ...commonChartOptions.scales,
+                         y: { ...commonChartOptions.scales.y, beginAtZero: true }
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
